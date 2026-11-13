@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>G.E.R. · Sabor de Minas</title>
+<style>
+:root{--bg:#f5f1ea;--cd:#fff;--tx:#231e19;--mu:#6d645b;--bd:#e4dcd0;--in:#f1ebe2;--pr:#d9661f;--sb:#1b2842;--ok:#2a8a55;--wa:#c98a00;--er:#c53a2c}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#15130f;--cd:#201d18;--tx:#f1ebe2;--mu:#a59b8f;--bd:#37312a;--in:#2a2620}}
+:root[data-theme=dark]{--bg:#15130f;--cd:#201d18;--tx:#f1ebe2;--mu:#a59b8f;--bd:#37312a;--in:#2a2620}
+*{box-sizing:border-box}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+button{font:inherit;cursor:pointer}
+#sb{position:fixed;top:0;bottom:0;left:0;width:240px;background:var(--sb);color:#fff;display:flex;flex-direction:column;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);z-index:40;transition:transform .25s}
+.lg{padding:18px 20px;font-size:20px;font-weight:700}.lg small{display:block;font-size:12px;font-weight:400;opacity:.7}
+#nv{flex:1;padding:8px 10px;overflow-y:auto}
+#nv button{display:flex;gap:10px;width:100%;padding:11px 12px;margin:2px 0;border:0;border-radius:8px;background:none;color:#e8ecf5;text-align:left}
+#nv button:hover{background:rgba(255,255,255,.16);color:#fff}
+#nv button.on{background:var(--pr);color:#fff}
+#fd{margin:10px;padding:12px;border-radius:10px;background:rgba(255,255,255,.1);font-size:13px}#fd b{display:block;font-size:26px}
+#ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:35}
+#app{margin-left:240px}
+#tb{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:12px;padding:10px 20px;background:var(--cd);border-bottom:1px solid var(--bd)}
+#tb h1{font-size:19px;margin:0;flex:1}
+#bg{display:none;border:0;background:var(--in);color:var(--tx);font-size:22px;border-radius:8px;padding:4px 12px}
+#ub{display:flex;align-items:center;gap:8px;border:1px solid var(--bd);background:var(--in);color:var(--tx);border-radius:999px;padding:4px 12px 4px 4px;text-align:left}
+.av{width:32px;height:32px;border-radius:50%;background:var(--pr);color:#fff;display:grid;place-items:center;font-weight:700}
+#ub small{display:block;color:var(--mu);font-size:12px;line-height:1}
+#um{position:relative}
+#umenu{display:none;position:absolute;right:0;top:110%;min-width:200px;background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:6px;box-shadow:0 8px 24px rgba(0,0,0,.2)}#umenu.on{display:block}
+#umenu button{display:block;width:100%;text-align:left;border:0;background:none;color:var(--tx);padding:9px 10px;border-radius:6px}#umenu button:hover{background:var(--in)}
+main{padding:20px;max-width:1200px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:14px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:14px}
+.c{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:16px;margin-bottom:14px}.g4 .c,.g2 .c{margin:0}
+.c h3{margin:0 0 10px;font-size:15px}.k{color:var(--mu);font-size:13px}.kv{font-size:24px;font-weight:700}
+.hd{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}.hd h3{margin:0;flex:1}
+.b,.b2{border:1px solid var(--pr);background:var(--pr);color:#fff;padding:9px 14px;border-radius:8px;font-weight:600}
+.b2{background:none;color:var(--pr)}.sm{padding:5px 9px;font-size:13px}.b:hover{filter:brightness(1.1)}.b2:hover{background:var(--in)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:560px}th,td{padding:9px 8px;text-align:left;border-bottom:1px solid var(--bd);font-size:14px}th{color:var(--mu);font-weight:600;font-size:12px}
+.bd{padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}.r{background:var(--er)}.y{background:var(--wa)}.g{background:var(--ok)}
+label{display:block;margin:0 0 10px;font-size:13px;color:var(--mu)}
+input,select,textarea{width:100%;padding:9px;margin-top:4px;border:1px solid var(--bd);border-radius:8px;background:var(--in);color:var(--tx);font:inherit}
+.fl{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.fl>*{flex:1 1 140px;margin:0}
+#md{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:60;align-items:center;justify-content:center;padding:12px}#md.on{display:flex}
+.mb{background:var(--cd);border-radius:14px;padding:20px;width:100%;max-width:460px;max-height:90vh;overflow:auto}.mb h2{margin:0 0 14px;font-size:18px}
+.ac{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}.r2{display:flex;gap:6px}.r2 select{flex:2}.r2 input{flex:1}
+#ts{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#222;color:#fff;padding:10px 16px;border-radius:10px;z-index:80;opacity:0;pointer-events:none;transition:.2s;max-width:90%}#ts.on{opacity:1}
+.bar{height:12px;background:var(--in);border-radius:6px;position:relative;margin:4px 0 12px}.bar i{display:block;height:100%;border-radius:6px}.bar u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--tx)}
+.dn{width:130px;height:130px;border-radius:50%}.dn2{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.pt{text-align:left;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:12px;padding:14px}.pt:hover{border-color:var(--pr)}.pt s{display:block;font-size:30px;text-decoration:none}
+.pdv{display:grid;grid-template-columns:1fr 340px;gap:14px;align-items:start}
+.ln{display:flex;align-items:center;gap:6px;padding:7px 0;border-bottom:1px solid var(--bd);font-size:14px}.ln span{flex:1}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal b{text-align:center;color:var(--mu);font-size:12px}
+.dy{border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:8px;padding:4px;min-height:58px;display:flex;flex-direction:column;align-items:flex-start;gap:2px}.dy.td{outline:2px solid var(--pr)}
+.dy em{font-style:normal;font-size:11px;color:#fff;border-radius:4px;padding:0 4px}
+@media(max-width:899px){#sb{transform:translateX(-100%)}#sb.open{transform:none}#ov.on{display:block}#app{margin-left:0}#bg{display:block}.pdv{grid-template-columns:1fr}}
+@media(max-width:560px){main{padding:12px}#tb{padding:8px 12px}.hm{display:none}#ub{padding:4px}.dy{min-height:46px;font-size:12px}.dy em{font-size:9px}}
+</style></head><body>
+<aside id="sb"><div class="lg">🍲 G.E.R.<small>Sabor de Minas</small></div><nav id="nv"></nav><div id="fd"></div></aside><div id="ov" data-a="sbx"></div>
+<div id="app"><header id="tb"><button id="bg" data-a="sbo" aria-label="Menu">☰</button><h1 id="pt"></h1><div id="um"></div></header><main id="mn"></main></div>
+<div id="md"></div><div id="ts"></div>
+<script>
+const $=s=>document.querySelector(s),pad=n=>String(n).padStart(2,'0'),key=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()),TD=()=>key(new Date()),
+M=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'}),N=v=>v.toLocaleString('pt-BR',{maximumFractionDigits:3}),
+E=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const R={dono:['Dono','*','*','Acesso total'],gerente:['Gerente','*','*','Acesso total'],estoquista:['Estoquista',['dashboard','insumos','auditoria'],['estoque','perda','ficha'],'Insumos, entradas e perdas'],cozinheiro:['Cozinheiro(a)',['dashboard','insumos','cardapio','auditoria'],['perda','ficha'],'Cardápio, ficha técnica e perdas'],garcom:['Garçom/Caixa',['dashboard','cardapio','vendas','auditoria'],['venda','imp'],'Cardápio, comandas, vendas e importação']};
+const NAV=[['dashboard','📊','Dashboard'],['insumos','📦','Insumos'],['cardapio','🍲','Cardápio'],['demanda','📅','Demanda'],['vendas','🛒','Vendas'],['auditoria','📜','Auditoria'],['usuarios','🔐','Usuários']];
+const ICO={'Prato feito':'🍛','Marmitex':'🥡','Bebidas':'🥤','Sobremesas':'🍮'},CATS=Object.keys(ICO);
+const tot=(it,pr)=>it.reduce((a,[id,q])=>a+q*pr.find(p=>p.id==id).preco,0);
+const seed=()=>{const t=TD(),s={u:null,
+ins:[[1,'Carne suína','kg',28,20,22],[2,'Costela suína','kg',12.5,20,34],[3,'Feijão vermelho','kg',40,15,9],[4,'Arroz','kg',60,25,5],[5,'Farinha de mandioca','kg',12,5,7],[6,'Couve','kg',6,3,8],[7,'Linguiça','kg',15,8,25],[8,'Ovos','un',120,60,.9],[9,'Refrigerante lata','un',90,48,3],[10,'Doce de leite','kg',5,2,30],[11,'Queijo minas','kg',9,4,38],[12,'Embalagem marmitex','un',200,100,.8]].map(([id,nome,un,saldo,min,custo])=>({id,nome,un,saldo,min,custo})),
+pr:[[1,'Tutu à Mineira','Prato feito',32,[[3,.25],[6,.1],[5,.05],[7,.1]]],[2,'Feijão Tropeiro','Prato feito',34,[[3,.2],[5,.08],[7,.1],[8,1],[6,.05],[4,.15]]],[3,'Prato Feito Suíno','Prato feito',28,[[1,.2],[4,.15],[3,.15],[6,.05]]],[4,'Marmitex Costela','Marmitex',38,[[2,.3],[4,.2],[3,.25],[12,1]]],[5,'Marmitex Suíno','Marmitex',30,[[1,.25],[4,.2],[3,.25],[12,1]]],[6,'Refrigerante lata','Bebidas',6,[[9,1]]],[7,'Doce de leite c/ queijo','Sobremesas',14,[[10,.1],[11,.08]]]].map(([id,nome,cat,preco,f])=>({id,nome,cat,preco,f})),
+cal:{'2026-09-25':{f:1.5,d:'Sexta de movimento'},'2026-10-10':{f:2.2,d:'Feriado prolongado (sábado)'},'2026-10-11':{f:2.5,d:'Feriado prolongado'},'2026-10-12':{f:2.5,d:'Feriado — N. Sra. Aparecida'},'2026-11-02':{f:2.5,d:'Feriado — Finados'},'2026-12-25':{f:2.2,d:'Natal'}},v:[],log:[],rel:[],map:{},imp:[]};
+s.v=[[[1,2],[6,2]],[[5,2]],[[4,1],[6,1]],[[7,2]]].map(it=>({dt:t,it,v:tot(it,s.pr),pg:'Pix'}));return s};
+let S,P='dashboard',cart={},T,OK,CM={y:new Date().getFullYear(),m:new Date().getMonth()};
+try{S=JSON.parse(localStorage.getItem('ger'))}catch(e){}S=S||seed();S.map=S.map||{};S.imp=S.imp||[];S.u=null;S.users=S.users||[];S.users.forEach(u=>{if(u.r==='caixa'||u.r==='garcom')u.r='garcom'});S.lk=S.lk||{};
+const save=()=>{try{localStorage.setItem('ger',JSON.stringify({...S,u:null}))}catch(e){}},
+I=id=>S.ins.find(x=>x.id==id),PR=id=>S.pr.find(x=>x.id==id),
+wd=k=>new Date(k+'T12:00').getDay(),fat=k=>S.cal[k]?S.cal[k].f:([0,6].includes(wd(k))?1.8:1),
+dsc=k=>S.cal[k]?S.cal[k].d:([0,6].includes(wd(k))?'Fim de semana':'Dia comum'),
+fc=f=>f>=2?'var(--er)':f>1.2?'var(--pr)':'var(--ok)',
+md=i=>i.min*fat(TD()),st=i=>{const m=md(i);return i.saldo<m?'r':i.saldo<=m*1.3?'y':'g'},
+bd=i=>{const s=st(i);return `<span class="bd ${s}">${{r:'🔴 Crítico',y:'🟡 Atenção',g:'🟢 Seguro'}[s]}</span>`},
+cu=p=>p.f.reduce((a,[i,q])=>a+q*I(i).custo,0),
+ok=p=>p=='usuarios'?S.u.r=='dono':R[S.u.r][1]=='*'||R[S.u.r][1].includes(p),can=a=>{if(a=='usr')return S.u.r=='dono';const x=R[S.u.r][2];return x=='*'||x.includes(a)},
+L=a=>{S.log.unshift({t:Date.now(),u:S.u.n,r:R[S.u.r][0],a});S.log=S.log.slice(0,200)},
+toast=m=>{const t=$('#ts');t.textContent=m;t.className='on';clearTimeout(T);T=setTimeout(()=>t.className='',3200)},
+cl=()=>{$('#md').className='';OK=0},done=m=>{cl();save();render();toast(m)},
+fld=(l,n,t='text',x='')=>`<label>${l}<input name="${n}" type="${t}" ${x}></label>`,
+sel=(l,n,o,v)=>`<label>${l}<select name="${n}">${o.map(([a,b])=>`<option value="${a}"${String(a)==String(v)?' selected':''}>${E(b)}</option>`).join('')}</select></label>`,
+io=()=>S.ins.map(i=>[i.id,i.nome+' ('+i.un+')']),
+mo=(t,b,o,lab='Salvar',nc)=>{$('#md').innerHTML=`<div class="mb"><form id="mf"><h2>${t}</h2>${b}<div class="ac">${nc?'':'<button type="button" class="b2" data-a="cls">'+(o?'Cancelar':'Fechar')+'</button>'}${o?`<button class="b">${lab}</button>`:''}</div></form></div>`;$('#md').className='on';OK=o};
+const V={
+dashboard(){const k=TD(),f=fat(k),vs=S.v.filter(v=>v.dt==k),q={},cat={};vs.forEach(v=>v.it.forEach(([id,n])=>{const p=PR(id);if(!p)return;q[id]=(q[id]||0)+n;cat[p.cat]=(cat[p.cat]||0)+n*p.preco}));
+const top=Object.entries(q).sort((a,b)=>b[1]-a[1])[0],ur=S.ins.filter(i=>st(i)!='g').sort((a,b)=>st(a)<st(b)?1:-1),
+bars=[...S.ins].sort((a,b)=>a.saldo/md(a)-b.saldo/md(b)).slice(0,6).map(i=>{const m=md(i),sc=Math.max(i.saldo,m*1.6);return `<div class="k">${E(i.nome)} — ${N(i.saldo)} ${i.un} (mín. ${N(m)})</div><div class="bar"><i class="${st(i)}" style="width:${i.saldo/sc*100}%"></i><u style="left:${m/sc*100}%"></u></div>`}).join(''),
+cs=['#d9661f','#2a8a55','#3d6fd0','#c98a00'],tt=Object.values(cat).reduce((a,b)=>a+b,0);let acc=0;const fv=vs.reduce((a,v)=>a+v.v,0),cmv=vs.reduce((a,v)=>a+v.it.reduce((b,[id,n])=>b+(PR(id)?cu(PR(id))*n:0),0),0),lu=fv-cmv,mgn=fv?lu/fv*100:0,pos=lu>=0;
+const cg=tt?Object.entries(cat).map(([c,v],n)=>{const a=acc;acc+=v/tt*100;return `${cs[n%4]} ${a}% ${acc}%`}).join(','):'var(--in) 0 100%';
+return `<div class="g4"><div class="c"><div class="k">Fator do dia</div><div class="kv" style="color:${fc(f)}">${f.toFixed(1)}x</div><div class="k">${dsc(k)}</div></div>
+<div class="c"><div class="k">Faturamento hoje</div><div class="kv">${M(vs.reduce((a,v)=>a+v.v,0))}</div><div class="k">${vs.length} vendas</div></div>
+<div class="c"><div class="k">Alertas críticos</div><div class="kv" style="color:var(--er)">${S.ins.filter(i=>st(i)=='r').length}</div><div class="k">insumos abaixo do mínimo</div></div>
+<div class="c"><div class="k">Mais vendido hoje</div><div class="kv" style="font-size:18px">${top?E(PR(top[0]).nome):'—'}</div><div class="k">${top?top[1]+' unid.':'sem vendas'}</div></div></div>
+${['dono','gerente'].includes(S.u.r)?`<div class="c" style="border-left:5px solid ${pos?'var(--ok)':'var(--er)'}"><div class="hd"><h3>Resultado do dia</h3><span class="bd ${pos?'g':'r'}">${!vs.length?'Sem vendas hoje':pos?'🟢 Com lucro':'🔴 Prejuízo'}</span></div><div class="g4" style="margin:0"><div><div class="k">Faturamento</div><div class="kv">${M(fv)}</div></div><div><div class="k">CMV (custo dos pratos)</div><div class="kv">${M(cmv)}</div></div><div><div class="k">Lucro bruto</div><div class="kv" style="color:${pos?'var(--ok)':'var(--er)'}">${M(lu)}</div></div><div><div class="k">Margem bruta</div><div class="kv" style="color:${pos?'var(--ok)':'var(--er)'}">${mgn.toFixed(1)}%</div></div></div><p class="k" style="margin:10px 0 0">Lucro bruto = faturamento − CMV (soma dos insumos gastos nos pratos vendidos hoje). Não inclui despesas fixas como salários, aluguel e energia.</p></div>`:''}
+<div class="g2"><div class="c"><h3>Saldo vs. mínimo dinâmico (linha = mínimo)</h3>${bars}</div>
+<div class="c"><h3>Vendas por categoria (hoje)</h3><div class="dn2"><div class="dn" style="background:conic-gradient(${cg});-webkit-mask:radial-gradient(circle 38px,#0000 98%,#000);mask:radial-gradient(circle 38px,#0000 98%,#000)"></div><div>${Object.keys(cat).map((c,n)=>`<div><span style="color:${cs[n%4]}">●</span> ${c} — ${M(cat[c])}</div>`).join('')||'<span class="k">Sem vendas hoje</span>'}</div></div></div></div>
+<div class="c"><div class="hd"><h3>Lista de compras urgentes</h3><button class="b sm" data-a="pc" data-need="estoque">Gerar pedido de compra</button><button class="b2 sm" data-a="ent" data-id="${ur[0]?ur[0].id:1}" data-need="estoque">Dar entrada em estoque</button></div>
+<div class="tw"><table><tr><th>Insumo</th><th>Saldo</th><th>Mín. hoje</th><th>Status</th><th></th></tr>${ur.map(i=>`<tr><td>${E(i.nome)}</td><td>${N(i.saldo)} ${i.un}</td><td>${N(md(i))}</td><td>${bd(i)}</td><td><button class="b2 sm" data-a="ent" data-id="${i.id}" data-need="estoque">+ Entrada</button></td></tr>`).join('')||'<tr><td colspan=5>Tudo em dia 🎉</td></tr>'}</table></div></div>`},
+insumos(){const q=(window.fq||'').toLowerCase(),fs=window.fs||'';const l=S.ins.filter(i=>i.nome.toLowerCase().includes(q)&&(!fs||st(i)==fs));
+return `<div class="fl"><input id="fq" placeholder="Buscar insumo…" value="${E(window.fq||'')}"><select id="fs"><option value="">Todos os status</option>${[['g','Verde'],['y','Amarelo'],['r','Vermelho']].map(([a,b])=>`<option value="${a}"${fs==a?' selected':''}>${b}</option>`).join('')}</select><button class="b" data-a="ni" data-need="estoque">+ Novo Insumo</button></div>
+<div class="c tw"><table><tr><th>Insumo</th><th>Saldo físico</th><th>Mín. base</th><th>Mín. dinâmico hoje</th><th>Status</th><th>Ações</th></tr>${l.map(i=>`<tr><td>${E(i.nome)}</td><td>${N(i.saldo)} ${i.un}</td><td>${N(i.min)}</td><td>${N(md(i))}</td><td>${bd(i)}</td><td style="white-space:nowrap"><button class="b sm" data-a="ent" data-id="${i.id}" data-need="estoque">+ Entrada</button> <button class="b2 sm" data-a="perda" data-id="${i.id}" data-need="perda">− Perda/Ajuste</button> <button class="b2 sm" data-a="ri" data-id="${i.id}" data-need="estoque">🗑 Remover</button></td></tr>`).join('')||'<tr><td colspan=6>Nenhum insumo encontrado.</td></tr>'}</table></div>`},
+cardapio(){return `<div class="hd"><h3>${S.pr.length} pratos</h3>${can('cardapio')?'<button class="b" data-a="np" data-need="cardapio">+ Novo Prato</button>':''}</div><div class="pg">${S.pr.map(p=>`<div class="c" style="margin:0"><div style="font-size:30px">${ICO[p.cat]}</div><b>${E(p.nome)}</b><div class="k">${p.cat} · ${M(p.preco)}</div>${can('ficha')?`<button class="b2 sm" style="margin-top:10px" data-a="fic" data-id="${p.id}" data-need="ficha">Ver Ficha Técnica</button>`:''} ${can('cardapio')?`<button class="b2 sm" style="margin-top:10px" data-a="rp" data-id="${p.id}" data-need="cardapio">🗑 Remover</button>`:''}</div>`).join('')}</div>`},
+demanda(){const{y,m}=CM,f0=new Date(y,m,1),n=new Date(y,m+1,0).getDate(),t=TD();let c='';for(let i=0;i<f0.getDay();i++)c+='<i></i>';
+for(let d=1;d<=n;d++){const k=y+'-'+pad(m+1)+'-'+pad(d),f=fat(k);c+=`<button class="dy${k==t?' td':''}" data-a="day" data-k="${k}" data-need="demanda"><span>${d}</span><em style="background:${fc(f)}">${f.toFixed(1)}x</em></button>`}
+const up=Object.entries(S.cal).filter(([k])=>k>=t).sort().slice(0,6);
+return `<div class="c"><div class="hd"><button class="b2 sm" data-a="cm" data-d="-1">◀</button><h3 style="text-align:center;text-transform:capitalize">${f0.toLocaleDateString('pt-BR',{month:'long',year:'numeric'})}</h3><button class="b2 sm" data-a="cm" data-d="1">▶</button></div>
+<div class="cal">${['D','S','T','Q','Q','S','S'].map(x=>`<b>${x}</b>`).join('')}${c}</div><p class="k"><span style="color:var(--ok)">●</span> normal (≤1.2x) · <span style="color:var(--pr)">●</span> alta · <span style="color:var(--er)">●</span> pico (≥2x). Toque num dia para ajustar o multiplicador. Fins de semana usam 1.8x por padrão.</p></div>
+<div class="c"><h3>Próximos dias especiais</h3>${up.map(([k,v])=>`<div class="ln"><span>${k.split('-').reverse().join('/')} — ${E(v.d)}</span><b style="color:${fc(v.f)}">${v.f.toFixed(1)}x</b></div>`).join('')||'<span class="k">Nenhum.</span>'}</div>`},
+vendas(){const tt=Object.entries(cart).reduce((a,[id,q])=>a+q*PR(id).preco,0);
+return `<div class="hd"><h3>Comanda / PDV</h3>${can('imp')?'<button class="b2" data-a="imp" data-need="imp">📥 Importar do Mestre Sistemas</button>':''}</div><div class="pdv"><div class="pg">${S.pr.map(p=>`<button class="pt" data-a="add" data-id="${p.id}" data-need="venda"><s>${ICO[p.cat]}</s><b>${E(p.nome)}</b><div class="k">${M(p.preco)}</div></button>`).join('')}</div>
+<div class="c"><h3>Comanda atual</h3>${Object.entries(cart).map(([id,q])=>`<div class="ln"><span>${E(PR(id).nome)}<br><small class="k">${M(PR(id).preco)} × ${q} = ${M(PR(id).preco*q)}</small></span><button class="b2 sm" data-a="dec" data-id="${id}">−</button><b>${q}</b><button class="b2 sm" data-a="add" data-id="${id}" data-need="venda">+</button><button class="b2 sm" data-a="rm" data-id="${id}">✕</button></div>`).join('')||'<p class="k">Toque nos pratos para adicionar.</p>'}
+<div class="kv" style="margin:12px 0">${M(tt)}</div><button class="b" style="width:100%" data-a="cv" data-need="venda">CONCLUIR VENDA</button></div></div>`},
+auditoria(){const o=(a)=>a.map(x=>[x,x]);
+return `<div class="c"><h3>Registrar relato</h3><form id="rf">${'<div class="fl">'+sel('Tipo','tp',o(['Ocorrência','Perda / desperdício','Problema de equipamento','Divergência de estoque','Sugestão']))+sel('Gravidade','g',o(['Baixa','Média','Alta']))+'</div>'}<label>Descreva o que aconteceu<textarea name="x" rows="3" required maxlength="500"></textarea></label><button class="b">Enviar relato</button></form></div>
+<div class="c"><h3>Relatos (${S.rel.length})</h3>${S.rel.map(r=>`<div class="ln"><span><b>${r.tp}</b> · ${r.g}<br>${E(r.x)}<br><small class="k">${E(r.u)} (${r.r}) · ${new Date(r.t).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}</small></span></div>`).join('')||'<span class="k">Nenhum relato ainda.</span>'}</div>
+<div class="c"><h3>Log de movimentações</h3><div class="tw"><table><tr><th>Quando</th><th>Usuário</th><th>Ação</th></tr>${S.log.slice(0,60).map(l=>`<tr><td>${new Date(l.t).toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})}</td><td>${E(l.u)} <span class="k">(${l.r})</span></td><td>${E(l.a)}</td></tr>`).join('')||'<tr><td colspan=3>Sem registros.</td></tr>'}</table></div></div>`},
+usuarios(){return `<div class="hd"><h3>${S.users.length} usuário(s)</h3><button class="b" data-a="nu" data-need="usr">+ Novo usuário</button></div><div class="c tw"><table><tr><th>Nome</th><th>E-mail</th><th>Perfil</th><th>Status</th><th>Ações</th></tr>${S.users.map(u=>`<tr><td>${E(u.n)}</td><td>${E(u.em)}</td><td>${R[u.r][0]}</td><td>${!u.at?'<span class="bd r">Inativo</span>':u.tr?'<span class="bd y">Senha provisória</span>':'<span class="bd g">Ativo</span>'}</td><td style="white-space:nowrap"><button class="b2 sm" data-a="rs" data-id="${u.id}" data-need="usr">Redefinir senha</button> <button class="b2 sm" data-a="tg" data-id="${u.id}" data-need="usr">${u.at?'Desativar':'Ativar'}</button></td></tr>`).join('')}</table></div><p class="k">Somente o Dono cadastra usuários e define o perfil de acesso. Senhas nunca são exibidas: ficam armazenadas apenas como hash (PBKDF2-SHA256 com salt).</p>`}};
+/* ===== SEGURANÇA / AUTENTICAÇÃO =====
+   Protótipo executado no navegador: o perfil vem do cadastro (nunca é escolhido no login),
+   senhas só existem como hash PBKDF2-SHA256 + salt, há bloqueio por tentativas e expiração por inatividade.
+   A validação definitiva (hash bcrypt/Argon2, sessão e permissões) passa para o servidor na etapa de integração. */
+const MAXT=5,BLK=5*60000,IDLE=15*60000,PBK=150000,enc=new TextEncoder(),
+hx=b=>[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''),
+rnd=n=>hx(crypto.getRandomValues(new Uint8Array(n))),
+hs=async(p,s)=>{const k=await crypto.subtle.importKey('raw',enc.encode(p),'PBKDF2',false,['deriveBits']);return hx(await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt:enc.encode(s),iterations:PBK},k,256))},
+eq=(a,b)=>{if(a.length!=b.length)return false;let d=0;for(let i=0;i<a.length;i++)d|=a.charCodeAt(i)^b.charCodeAt(i);return d==0},
+gen=()=>{const a='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789';return [...crypto.getRandomValues(new Uint8Array(10))].map(x=>a[x%a.length]).join('')+'a7'},
+pe=(p,c,em)=>p!==c?'As senhas não coincidem':p.length<8?'A senha precisa ter pelo menos 8 caracteres':(!/[A-Za-z]/.test(p)||!/\d/.test(p))?'Use letras e números na senha':(nk(p)==em||nk(p)==em.split('@')[0])?'A senha não pode ser igual ao e-mail':'',
+vem=e=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e),
+LA=(u,r,a)=>{S.log.unshift({t:Date.now(),u,r,a});S.log=S.log.slice(0,200)},
+pwh='<p class="k">Mínimo de 8 caracteres, com letras e números.</p>';
+let SX=0,PU=null;
+const sess=u=>{S.u={id:u.id,n:u.n,r:u.r};SX=Date.now()+IDLE;try{sessionStorage.setItem('gers',JSON.stringify({id:u.id,x:SX}))}catch(e){}},
+out=m=>{S.u=null;SX=0;cart={};P='dashboard';try{sessionStorage.removeItem('gers')}catch(e){}cl();render();if(m)toast(m)},
+nopw=()=>(window.crypto&&crypto.subtle)?0:(toast('Este navegador não oferece criptografia. Abra o sistema por HTTPS ou localhost.'),1);
+function setup(){if(nopw())return;mo('Primeiro acesso — criar administrador','<p class="k">Nenhum usuário cadastrado. Crie a conta do Dono; os demais usuários são cadastrados por ele, dentro do sistema.</p>'+fld('Nome','n','text','required maxlength="60" autocomplete="name"')+fld('E-mail (será o login)','e','email','required maxlength="100" autocomplete="username"')+fld('Senha','s','password','required autocomplete="new-password"')+fld('Confirmar senha','c','password','required autocomplete="new-password"')+pwh,async d=>{const em=nk(d.e);if(!vem(em))return toast('Informe um e-mail válido');const m=pe(d.s,d.c,em);if(m)return toast(m);const salt=rnd(16),u={id:1,n:d.n.trim(),em,r:'dono',salt,h:await hs(d.s,salt),at:1,tr:0};S.users.push(u);sess(u);LA(u.n,'Dono','Conta de administrador criada');done('Bem-vindo(a), '+u.n)},'Criar conta',1)}
+function login(){if(nopw())return;mo('Entrar no G.E.R.',fld('E-mail','e','email','required maxlength="100" autocomplete="username"')+fld('Senha','s','password','required autocomplete="current-password"'),async d=>{const em=nk(d.e),k='e:'+em,now=Date.now(),l=S.lk[k]=S.lk[k]||{t:0,b:0};if(l.b>now)return toast('Muitas tentativas. Aguarde '+Math.ceil((l.b-now)/60000)+' min.');
+const u=S.users.find(x=>x.em==em),h=await hs(d.s,u?u.salt:'0'.repeat(32));
+if(!u||!u.at||!eq(h,u.h)){l.t++;let b='';if(l.t>=MAXT){l.b=now+BLK;l.t=0;b=' · bloqueado por 5 min'}LA(em,'—','Falha de login'+b);save();return toast('E-mail ou senha inválidos')}
+delete S.lk[k];if(u.tr){PU=u;return trocar(1)}sess(u);LA(u.n,R[u.r][0],'Login realizado');done('Bem-vindo(a), '+u.n)},'Entrar',1)}
+function trocar(f){const u=f?PU:S.users.find(x=>x.id==S.u.id);mo(f?'Defina sua nova senha':'Alterar minha senha',(f?'<p class="k">Sua senha é provisória. Defina uma nova para continuar.</p>':fld('Senha atual','a','password','required autocomplete="current-password"'))+fld('Nova senha','s','password','required autocomplete="new-password"')+fld('Confirmar nova senha','c','password','required autocomplete="new-password"')+pwh,async d=>{
+if(!f&&!eq(await hs(d.a,u.salt),u.h))return toast('Senha atual incorreta');
+const m=pe(d.s,d.c,u.em);if(m)return toast(m);if(eq(await hs(d.s,u.salt),u.h))return toast('A nova senha deve ser diferente da atual');
+u.salt=rnd(16);u.h=await hs(d.s,u.salt);u.tr=0;if(f){PU=null;sess(u)}LA(u.n,R[u.r][0],'Senha alterada');done('Senha alterada com sucesso'+(f?'. Bem-vindo(a), '+u.n:''))},'Salvar',f)}
+function render(){if(!S.u){$('#mn').innerHTML='';$('#nv').innerHTML='';$('#um').innerHTML='';$('#fd').innerHTML='';$('#pt').textContent='';return S.users.length?login():setup()}const r=R[S.u.r];if(!ok(P))P=NAV.find(n=>ok(n[0]))[0];
+$('#nv').innerHTML=NAV.filter(n=>ok(n[0])).map(n=>`<button data-a="go" data-p="${n[0]}" class="${n[0]==P?'on':''}"><span>${n[1]}</span>${n[2]}</button>`).join('');
+const k=TD(),f=fat(k);$('#fd').innerHTML=`<span>Hoje · ${k.split('-').reverse().slice(0,2).join('/')}</span><b style="color:#ffb27a">${f.toFixed(1)}x</b>${dsc(k)}`;
+$('#um').innerHTML=`<button id="ub" data-a="um"><span class="av">${E(S.u.n[0].toUpperCase())}</span><span class="hm"><b>${E(S.u.n)}</b><small>${r[0]}</small></span></button><div id="umenu"><button data-a="pw">🔑 Alterar minha senha</button><button data-a="out">🚪 Sair</button>${r[1]=='*'?'<button data-a="reset">♻ Restaurar dados de exemplo</button>':''}</div>`;
+$('#pt').textContent=NAV.find(n=>n[0]==P)[2];$('#mn').innerHTML=V[P]()}
+let IM=[],UK=[];
+const nk=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim(),ky=i=>i.cod?'c:'+i.cod:'n:'+nk(i.nome),
+res=i=>{const m=S.map[ky(i)]||S.map['n:'+nk(i.nome)];if(m&&PR(m))return +m;const p=S.pr.find(p=>nk(p.nome)==nk(i.nome));return p?p.id:0},
+pn=x=>{x=String(x).trim();return +(x.includes(',')?x.replace(/\./g,'').replace(',','.'):x)||0},
+dtn=x=>{const m=String(x).match(/(\d{2})\/(\d{2})\/(\d{4})/);return m?m[3]+'-'+m[2]+'-'+m[1]:(String(x).match(/\d{4}-\d{2}-\d{2}/)||[TD()])[0]},
+xmlp=t=>{const d=new DOMParser().parseFromString(t,'text/xml');if(d.querySelector('parsererror'))return[];const gt=(e,n)=>e.getElementsByTagNameNS('*',n),g=(e,n)=>{const x=gt(e,n)[0];return x?x.textContent.trim():''},inf=gt(d,'infNFe')[0]||d.documentElement,dh=g(inf,'dhEmi')||g(inf,'dEmi'),id=inf.getAttribute('Id')||('nf'+g(inf,'nNF')+dh);
+const items=[...gt(d,'det')].map(e=>({cod:g(e,'cProd'),nome:g(e,'xProd'),q:pn(g(e,'qCom')),vu:pn(g(e,'vUnCom'))})).filter(i=>i.q>0);return items.length?[{id,dt:dtn(dh),items}]:[]},
+csvp=(fn,t)=>{const L=t.split(/\r?\n/).filter(x=>x.trim());if(L.length<2)return[];const dl=(L[0].match(/;/g)||[]).length>=(L[0].match(/,/g)||[]).length?';':',',H=L[0].split(dl).map(nk),ix=x=>H.findIndex(h=>x.test(h)),
+[ic,ip,iq,iv,idt,ik]=[ix(/^(cod|sku)/),ix(/produto|descri|item|nome/),ix(/qtd|quant/),ix(/unit|valor|preco/),ix(/data/),ix(/comanda|pedido|numero|cupom/)];if(ip<0||iq<0)return[];const G={};
+L.slice(1).forEach((l,n)=>{const c=l.split(dl),dt=idt>=0?dtn(c[idt]):TD(),id='csv:'+(ik>=0&&c[ik]?c[ik].trim()+':'+dt:fn+':'+n);(G[id]=G[id]||{id,dt,items:[]}).items.push({cod:ic>=0?(c[ic]||'').trim():'',nome:(c[ip]||'').trim(),q:pn(c[iq]),vu:iv>=0?pn(c[iv]):0})});
+return Object.values(G).map(x=>({...x,items:x.items.filter(i=>i.q>0&&i.nome)})).filter(x=>x.items.length)},
+parse=(n,t)=>/<\s*(\w+:)?(nfe|infNFe|det)\b/i.test(t)?xmlp(t):csvp(n,t),
+ipv=()=>{const n=IM.filter(x=>!S.imp.includes(x.id)),dp=IM.length-n.length;UK=[];n.forEach(x=>x.items.forEach(i=>{const k=ky(i);if(!res(i)&&!UK.some(u=>u.k==k))UK.push({k,nome:i.nome})}));
+$('#ipv').innerHTML=`<p><b>${n.length}</b> nota(s)/comanda(s) nova(s), <b>${n.reduce((a,x)=>a+x.items.length,0)}</b> itens${dp?` · ${dp} já importada(s) antes (ignoradas)`:''}</p>`+(UK.length?'<p class="k">Produtos sem vínculo: escolha o prato do GERA (o vínculo fica salvo para as próximas importações).</p>'+UK.map((u,i)=>`<label>${E(u.nome)}<select name="m${i}"><option value="">— ignorar —</option>${S.pr.map(p=>`<option value="${p.id}">${E(p.nome)}</option>`).join('')}</select></label>`).join(''):'<p class="k">Todos os produtos foram reconhecidos ✔</p>')},
+rd=r=>{IM=r.flatMap(([n,t])=>parse(n,t));if(!IM.length)toast('Não reconheci o arquivo. Use o XML da NFC-e ou um CSV com colunas de produto e quantidade');ipv()},
+smp=()=>{const t=TD(),nf=(id,n,h,it)=>`<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe"><NFe><infNFe Id="NFe${id}"><ide><nNF>${n}</nNF><dhEmi>${t}T${h}:00-03:00</dhEmi></ide>${it.map(([c,x,q,v],i)=>`<det nItem="${i+1}"><prod><cProd>${c}</cProd><xProd>${x}</xProd><qCom>${q}.0000</qCom><vUnCom>${v}</vUnCom></prod></det>`).join('')}</infNFe></NFe></nfeProc>`;
+return [['nfce-1041.xml',nf('31260900000000000000650010000010411000010411',1041,'12:10',[['101','TUTU A MINEIRA',2,'32.00'],['150','REFRIGERANTE LATA',2,'6.00']])],['nfce-1042.xml',nf('31260900000000000000650010000010421000010421',1042,'12:25',[['104','MARMITEX COSTELA',1,'38.00'],['190','SUCO DE LARANJA',1,'9.00']])]]};
+let RN=0;const orow=()=>{const n=RN++;return `<div class="r2"><select name="i${n}">${[['','— ingrediente —'],...io()].map(([a,b])=>`<option value="${a}">${E(b)}</option>`).join('')}</select><input name="q${n}" type="number" step="any" min="0" placeholder="qtd"><button type="button" class="b2 sm" data-a="rr" aria-label="Remover linha">✕</button></div>`};
+const doimp=d=>{if(!IM.length)return toast('Envie um arquivo primeiro');UK.forEach((u,i)=>{if(d['m'+i])S.map[u.k]=+d['m'+i]});let ns=0,ig=0,fat=0,dv=[];
+IM.forEach(x=>{if(S.imp.includes(x.id))return;const it=[];x.items.forEach(i=>{const id=res(i);id?it.push([id,i.q,i.vu]):ig++});if(!it.length)return;const nd={};it.forEach(([id,q])=>PR(id).f.forEach(([i,n])=>nd[i]=(nd[i]||0)+n*q));
+Object.keys(nd).forEach(i=>{const s=I(i);if(!s)return;if(s.saldo<nd[i]-1e-9){dv.push(s.nome);s.saldo=0}else s.saldo=+(s.saldo-nd[i]).toFixed(3)});
+const v=it.reduce((a,[id,q,vu])=>a+q*(vu||PR(id).preco),0);S.v.push({dt:x.dt,it:it.map(([id,q])=>[id,q]),v,src:'Mestre',ext:x.id});S.imp.push(x.id);ns++;fat+=v});
+if(!ns)return toast('Nenhuma comanda nova para importar');
+L(`Importação Mestre: ${ns} comanda(s), ${M(fat)}, estoque baixado`+(ig?` · ${ig} item(ns) ignorado(s) sem vínculo`:'')+(dv.length?` · ⚠ DIVERGÊNCIA (saldo insuficiente): ${[...new Set(dv)].join(', ')}`:''));IM=[];done(`${ns} comanda(s) importada(s) — ${M(fat)}`+(dv.length?' ⚠ com divergência de estoque':''))};
+const A={go:d=>{P=d.p;A.sbx();render();scrollTo(0,0)},sbo:()=>{$('#sb').classList.add('open');$('#ov').classList.add('on')},sbx:()=>{$('#sb').classList.remove('open');$('#ov').classList.remove('on')},
+imp:()=>{IM=[];mo('Importar comandas do Mestre Sistemas','<p class="k">Envie o XML das NFC-e ou o CSV de itens vendidos (pode selecionar vários arquivos).</p><input type="file" id="fi" multiple accept=".xml,.csv,.txt"><button type="button" class="b2 sm" style="margin:8px 0" data-a="smp">Usar exemplo (2 NFC-e)</button><div id="ipv"></div>',doimp,'Importar e baixar estoque')},smp:()=>rd(smp()),
+um:()=>$('#umenu').classList.toggle('on'),login,cls:cl,ai:()=>$('#ir').insertAdjacentHTML('beforeend',orow()),rr:(d,b)=>b.closest('.r2').remove(),reset:()=>{const u=S.u,us=S.users,lk=S.lk;S=seed();S.u=u;S.users=us;S.lk=lk;L('Dados de exemplo restaurados');done('Dados restaurados')},
+ent(d){mo('Entrada em estoque',sel('Insumo','i',io(),d.id)+fld('Quantidade','q','number','step="any" min="0.001" required')+fld('Custo unitário (opcional)','c','number','step="any" min="0"')+fld('Nota / fornecedor','n'),x=>{const i=I(x.i),q=+x.q;i.saldo=+(i.saldo+q).toFixed(3);if(+x.c)i.custo=+x.c;L(`Entrada: +${N(q)} ${i.un} de ${i.nome}`+(x.n?` (${x.n})`:''));done('Entrada registrada')})},
+perda(d){mo('Perda / ajuste',sel('Insumo','i',io(),d.id)+fld('Quantidade a baixar','q','number','step="any" min="0.001" required')+sel('Motivo','m',['Perda/desperdício','Vencimento','Quebra/acidente','Ajuste de inventário','Consumo interno'].map(x=>[x,x])),x=>{const i=I(x.i),q=+x.q;if(q>i.saldo)return toast('Quantidade maior que o saldo ('+N(i.saldo)+' '+i.un+')');i.saldo=+(i.saldo-q).toFixed(3);L(`Baixa: −${N(q)} ${i.un} de ${i.nome} (${x.m})`);done('Baixa registrada')})},
+ni(){mo('Novo insumo',fld('Nome','n','text','required maxlength="40"')+sel('Unidade','u',['kg','l','un'].map(x=>[x,x]))+fld('Saldo inicial','s','number','step="any" min="0" required value="0"')+fld('Estoque mínimo base','m','number','step="any" min="0" required')+fld('Custo unitário (R$)','c','number','step="any" min="0" required'),x=>{const id=Math.max(0,...S.ins.map(i=>i.id))+1;S.ins.push({id,nome:x.n.trim(),un:x.u,saldo:+x.s,min:+x.m,custo:+x.c});L('Novo insumo cadastrado: '+x.n);done('Insumo cadastrado')})},
+pc(){const l=S.ins.filter(i=>st(i)!='g');if(!l.length)return toast('Nenhum insumo precisa de reposição');
+mo('Pedido de compra',`<p class="k">Sugestão: repor até 2× o mínimo de hoje. Ajuste as quantidades.</p>`+l.map(i=>fld(`${E(i.nome)} (${i.un}) — saldo ${N(i.saldo)}`,'q'+i.id,'number',`step="any" min="0" value="${Math.max(0,Math.ceil((md(i)*2-i.saldo)*10)/10)}"`)).join(''),x=>{let c=0,n=0;l.forEach(i=>{const q=+x['q'+i.id];if(q>0){n++;c+=q*i.custo}});if(!n)return toast('Informe ao menos uma quantidade');L(`Pedido de compra gerado: ${n} itens, total estimado ${M(c)}`);done('Pedido gerado — '+M(c))},'Confirmar pedido')},
+np(){mo('Novo prato',fld('Nome','n','text','required maxlength="40"')+sel('Categoria','c',CATS.map(x=>[x,x]))+fld('Preço de venda (R$)','p','number','step="0.01" min="0" required')+'<div class="k">Ficha técnica (quantidade por prato)</div>'+`<div id="ir">${orow()+orow()+orow()}</div><button type="button" class="b2 sm" data-a="ai">+ Adicionar ingrediente</button>`,x=>{const m={};Object.keys(x).filter(k=>/^i\d+$/.test(k)).forEach(k=>{const n=k.slice(1),q=+x['q'+n];if(x[k]&&q>0)m[x[k]]=(m[x[k]]||0)+q});const f=Object.entries(m).map(([i,q])=>[+i,q]);if(!f.length)return toast('Adicione ao menos um ingrediente');S.pr.push({id:Math.max(0,...S.pr.map(p=>p.id))+1,nome:x.n.trim(),cat:x.c,preco:+x.p,f});L('Novo prato cadastrado: '+x.n);done('Prato cadastrado')})},
+fic(d){const p=PR(d.id),c=cu(p),mg=(p.preco-c)/p.preco*100;mo(E(p.nome),p.f.map(([i,q])=>`<div class="ln"><span>${E(I(i).nome)}</span><b>${N(q)} ${I(i).un}</b></div>`).join('')+`<p>Custo: <b>${M(c)}</b> · Preço: <b>${M(p.preco)}</b><br>Margem: <b style="color:${mg<30?'var(--er)':'var(--ok)'}">${mg.toFixed(1)}%</b></p>`)},
+day(d){const k=d.k,c=S.cal[k];mo(k.split('-').reverse().join('/'),fld('Multiplicador de demanda','f','number',`step="0.1" min="0.5" max="5" required value="${fat(k)}"`)+fld('Descrição (ex: Feriado)','d','text',`maxlength="40" value="${E(c?c.d:dsc(k))}"`)+`<button type="button" class="b2 sm" data-a="dr" data-k="${k}">Restaurar padrão</button>`,x=>{S.cal[k]={f:+x.f,d:x.d||'Ajuste manual'};L(`Calendário: ${k.split('-').reverse().join('/')} → ${(+x.f).toFixed(1)}x`);done('Calendário atualizado')})},
+rp(d){const p=PR(d.id);mo('Remover prato','<p>Remover <b>'+E(p.nome)+'</b> do cardápio? As vendas já feitas continuam no histórico.</p>',()=>{S.pr=S.pr.filter(x=>x.id!=p.id);delete cart[p.id];L('Prato removido: '+p.nome);done('Prato removido')},'Remover')},
+ri(d){const i=I(d.id),u=S.pr.filter(p=>p.f.some(([x])=>x==i.id)).map(p=>p.nome);if(u.length)return toast('Não dá para remover: usado na ficha de '+u.join(', '));mo('Remover insumo','<p>Remover <b>'+E(i.nome)+'</b> (saldo '+N(i.saldo)+' '+i.un+')?</p>',()=>{S.ins=S.ins.filter(x=>x.id!=i.id);L('Insumo removido: '+i.nome);done('Insumo removido')},'Remover')},
+dr(d){delete S.cal[d.k];L('Calendário restaurado: '+d.k);done('Padrão restaurado')},
+cm(d){CM.m+=+d.d;if(CM.m<0){CM.m=11;CM.y--}if(CM.m>11){CM.m=0;CM.y++}render()},
+add(d){cart[d.id]=(cart[d.id]||0)+1;render()},dec(d){if(--cart[d.id]<1)delete cart[d.id];render()},rm(d){delete cart[d.id];render()},
+cv(){const e=Object.entries(cart);if(!e.length)return toast('Comanda vazia');const need={};e.forEach(([id,q])=>PR(id).f.forEach(([i,n])=>need[i]=(need[i]||0)+n*q));
+const bad=Object.keys(need).filter(i=>I(i).saldo<need[i]-1e-9);if(bad.length)return toast('Estoque insuficiente: '+bad.map(i=>I(i).nome).join(', '));
+const was=S.ins.filter(i=>st(i)!='r').map(i=>i.id);Object.keys(need).forEach(i=>I(i).saldo=+(I(i).saldo-need[i]).toFixed(3));
+const it=e.map(([id,q])=>[+id,q]),v=tot(it,S.pr);S.v.push({dt:TD(),it,v});L(`Venda: ${it.map(([id,q])=>q+'× '+PR(id).nome).join(', ')} — ${M(v)} · estoque baixado`);
+const nr=S.ins.filter(i=>st(i)=='r'&&was.includes(i.id)).map(i=>i.nome);cart={};done('Venda concluída — '+M(v)+(nr.length?' ⚠ Crítico: '+nr.join(', '):''))}};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]'),u=$('#umenu');if(!b)return u&&u.classList.remove('on');const d=b.dataset;if(!S.u)return;if(d.a!='um'&&u)u.classList.remove('on');
+if(d.need&&!can(d.need))return toast('Seu perfil ('+R[S.u.r][0]+') não tem permissão para isso');A[d.a](d,b)});
+document.addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target)),id=e.target.id;
+if(id=='mf'&&OK)OK(d);if(id=='rf'){S.rel.unshift({t:Date.now(),u:S.u.n,r:R[S.u.r][0],tp:d.tp,g:d.g,x:d.x});L(`Relato (${d.tp}): ${d.x.slice(0,60)}`);done('Relato registrado')}});
+document.addEventListener('input',e=>{if(e.target.id=='fq'){window.fq=e.target.value;const p=e.target.selectionStart;render();const f=$('#fq');f.focus();f.setSelectionRange(p,p)}});
+document.addEventListener('change',e=>{if(e.target.id=='fi')Promise.all([...e.target.files].map(async f=>[f.name,await f.text()])).then(rd);if(e.target.id=='fs'){window.fs=e.target.value;render()}});
+Object.assign(A,{pw:()=>trocar(0),out:()=>{LA(S.u.n,R[S.u.r][0],'Logout');save();out()},
+nu(){mo('Novo usuário',fld('Nome','n','text','required maxlength="60"')+fld('E-mail (login)','e','email','required maxlength="100"')+sel('Perfil de acesso','r',Object.entries(R).map(([k,v])=>[k,v[0]+' — '+v[3]]),'estoquista')+'<p class="k">O sistema gera uma senha provisória, que o usuário precisa trocar no primeiro acesso.</p>',async d=>{const em=nk(d.e);if(!vem(em))return toast('Informe um e-mail válido');if(S.users.some(x=>x.em==em))return toast('Já existe usuário com este e-mail');if(!R[d.r])return toast('Perfil inválido');const tp=gen(),salt=rnd(16);S.users.push({id:Math.max(0,...S.users.map(x=>x.id))+1,n:d.n.trim(),em,r:d.r,salt,h:await hs(tp,salt),at:1,tr:1});L('Usuário criado: '+d.n.trim()+' ('+R[d.r][0]+')');save();render();mo('Usuário criado','<p>Entregue esta senha provisória ao usuário. Ela não será exibida novamente:</p><div class="kv" id="tpw">'+tp+'</div>',0)},'Criar usuário')},
+rs(d){const u=S.users.find(x=>x.id==d.id);mo('Redefinir senha','<p>Gerar nova senha provisória para <b>'+E(u.n)+'</b>? A senha atual deixa de funcionar.</p>',async()=>{const tp=gen();u.salt=rnd(16);u.h=await hs(tp,u.salt);u.tr=1;delete S.lk['e:'+u.em];L('Senha redefinida: '+u.n);save();render();mo('Nova senha provisória','<p>Entregue a <b>'+E(u.n)+'</b>:</p><div class="kv" id="tpw">'+tp+'</div>',0)},'Redefinir')},
+tg(d){const u=S.users.find(x=>x.id==d.id);if(u.id==S.u.id)return toast('Você não pode desativar a própria conta');if(u.at&&u.r=='dono'&&S.users.filter(x=>x.r=='dono'&&x.at).length<2)return toast('É preciso manter ao menos um Dono ativo');u.at=u.at?0:1;L((u.at?'Usuário ativado: ':'Usuário desativado: ')+u.n);save();render();toast(u.at?'Usuário ativado':'Usuário desativado')}});
+['click','keydown','touchstart'].forEach(ev=>document.addEventListener(ev,()=>{if(S.u){SX=Date.now()+IDLE;try{sessionStorage.setItem('gers',JSON.stringify({id:S.u.id,x:SX}))}catch(e){}}},true));
+setInterval(()=>{if(!S.u)return;const u=S.users.find(x=>x.id==S.u.id);if(!u||!u.at)return out('Acesso revogado');if(Date.now()>SX){LA(S.u.n,R[S.u.r][0],'Sessão encerrada por inatividade');save();out('Sessão encerrada por inatividade')}},15000);
+try{const g=JSON.parse(sessionStorage.getItem('gers')),u=g&&S.users.find(x=>x.id==g.id&&x.at);if(u&&g.x>Date.now()){S.u={id:u.id,n:u.n,r:u.r};SX=g.x}}catch(e){}
+render();
+</script></body></html>
